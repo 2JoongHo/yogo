@@ -2,7 +2,7 @@
 
 **Yogo**는 "오늘 우리 뭐 하지?"라는 고민을 해결해 주는 활동 추천 웹 서비스입니다. 단순한 리스트 나열이 아닌, 사용자의 상황(인원수)에 가장 몰입할 수 있는 최적의 경험을 제안합니다.
 
-🔗 [YOGO 바로가기](https://dear-mood.vercel.app/ "심심할 땐 요고")
+🔗 [YOGO 바로가기](https://yogo-three.vercel.app/ "심심할 땐 요고")
 
 ## 🧠 프로젝트에 담긴 고심의 흔적 (Core Philosophy)
 
