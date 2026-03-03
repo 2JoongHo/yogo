@@ -1,42 +1,104 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* src/App.css */
+.container {
+  background-color: black;
+  color: white;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family:
+    "Pretendard",
+    -apple-system,
+    sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  color: #facc15;
+  font-size: 4rem;
+  font-style: italic;
+  font-weight: 900;
+  margin: 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.description {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  opacity: 0.9;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.recommend-btn {
+  background-color: #facc15;
+  color: black;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
 }
 
-.card {
-  padding: 2em;
+.recommend-btn:hover {
+  transform: scale(1.05);
+  background-color: #eab308; /* 약간 더 진한 노란색 */
 }
 
-.read-the-docs {
-  color: #888;
+.recommend-btn:active {
+  transform: scale(0.95);
+}
+
+.recommend-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.result-card {
+  margin-top: 3rem;
+  text-align: center;
+  padding: 20px;
+  border: 2px solid #facc15;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.result-title {
+  color: #facc15;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.result-info {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.participants-input {
+  background: transparent;
+  border: 2px solid #facc15;
+  color: white;
+  padding: 10px;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  width: 80px;
+  text-align: center;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.retry-btn {
+  margin-top: 20px;
+  background: none;
+  border: 1px solid #facc15;
+  color: #facc15;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
 }
