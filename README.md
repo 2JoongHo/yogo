@@ -1,73 +1,26 @@
-# React + TypeScript + Vite
+# 🌙 Yogo (요고) - 우리들을 위한 활동 추천
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Yogo**는 "오늘 우리 뭐 하지?"라는 고민을 해결해 주는 활동 추천 웹 서비스입니다. 단순한 리스트 나열이 아닌, 사용자의 상황(인원수)에 가장 몰입할 수 있는 최적의 경험을 제안합니다.
 
-Currently, two official plugins are available:
+## 🧠 프로젝트에 담긴 고심의 흔적 (Core Philosophy)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. 사용자 경험(UX)을 위한 '자연스러운' 레이아웃 고민
+* **가로 배치 인터페이스**: 처음에는 요소들을 세로로 나열했으나, "우리는 [5]명"이라는 하나의 문장처럼 느껴지게 하기 위해 `Flexbox`를 활용해 가로로 배치했습니다. 이는 사용자가 마치 대화하듯 정보를 입력하게 하여 서비스의 친근감을 높이는 의도된 설계입니다.
+* **입력 방식의 간소화**: 숫자를 직접 입력하는 과정에서 불필요한 테두리와 화살표 버튼을 제거(CSS 최적화)하여, 오직 '숫자' 그 자체에만 집중할 수 있는 깔끔한 UI를 지향했습니다.
 
-## React Compiler
+### 2. 확장성을 고려한 데이터 아키텍처 (`data.ts`)
+* **단순 데이터 이상의 가치**: 단순히 제목과 설명만 넣었다고 보이지 않도록 출력 시 문장형식으로 보이도록 배치했으며, 추후 사용자가 "활동적인 거 하고 싶어" 혹은 "실내가 좋아"라고 요구할 때 즉시 대응할 수 있는 필터링 시스템을 고려한 설계입니다.
+* **인원별 시너지 데이터 분석**: 3인일 때는 '협동'이 강조되는 방탈출을, 5인일 때는 '사회적 역동성'이 큰 마피아류 게임을 추천하는 등 인원수별로 가장 재미를 극대화할 수 있는 활동들을 엄선하여 구성했습니다.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 3. 기술적 기반 다지기
+* **현대적인 개발 환경 선택**: 익숙한 `create-react-app` 대신, 압도적인 빌드 속도와 가벼운 개발 환경을 제공하는 `Vite`를 도입하여 개발 효율성을 극대화했습니다.
+* **Type Safety (TypeScript)**: 프로젝트 초기부터 인터페이스를 정의하여, 데이터 구조의 오류를 방지하고 유지보수가 용이한 구조를 만들고자 고심했습니다.
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
+* **Framework**: React (Vite 기반)
+* **Language**: TypeScript
+* **Styling**: CSS
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📂 주요 고민의 결과물
+* **`InputStep.tsx`**: "우리는! [ ]명" 형태의 직관적인 가로 레이아웃 컴포넌트
+* **`data.ts`**: 1인부터 5인까지의 정교한 활동 데이터 모델링
