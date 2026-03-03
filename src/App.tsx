@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { type Activity } from "./components/types";
 import "./App.css";
 import { mockActivities } from "./components/data"; // 분리된 데이터 리스트 임포트
 import { InputStep } from "./components/inputStep"; // 인원 선택용 분리 컴포넌트 임포트
+import { type Activity } from "./components/types";
 
 function App() {
   // 상태(State) 관리
@@ -21,7 +21,7 @@ function App() {
     try {
       // 데이터에서 조건에 맞는 것만 추출
       const filtered = mockActivities.filter(
-        (item) => item.participants === participants,
+        (item) => item.participants === participants
       );
 
       if (filtered.length > 0) {
@@ -68,13 +68,13 @@ function App() {
       {/* 결과 표시 */}
       {step === 2 && data && (
         <div className="result-card">
+          {/* 결과 정보 */}
+          <p className="result-info">{data.type}</p>
+          {/* 결과 타이틀 */}
           <h2 className="result-title">{data.activity}</h2>
-          <p className="result-info">
-            종류 : {data.type} | 인원 : {data.participants}명
-          </p>
           {/* 초기 단계로 돌아가기 버튼 */}
           <button className="retry-btn" onClick={() => setStep(0)}>
-            다시 하기
+            다른거는?!
           </button>
         </div>
       )}

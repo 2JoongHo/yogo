@@ -1,0 +1,70 @@
+/* 전체 섹션 정렬 */
+.input-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px; /* 입력창과 추천받기 버튼 사이 간격 */
+  margin-top: 30px;
+}
+
+/* 가로 배치를 위한 컨테이너 */
+.input-container {
+  display: flex;
+  align-items: center; /* 수직 중앙 정렬 */
+  gap: 15px;
+}
+
+.input-description {
+  font-size: 1.5rem;
+  color: white;
+  margin: 0;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid #ffca28; /* 노란색 테두리 */
+  padding: 5px 15px;
+  border-radius: 12px;
+}
+
+.participants-input {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  width: 50px; /* 숫자 크기에 맞게 조절 */
+  text-align: center;
+  outline: none;
+  margin: 0;
+}
+
+/* Chrome, Safari, Edge에서 input의 위아래 화살표 제거 */
+.participants-input::-webkit-outer-spin-button,
+.participants-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.unit {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.recommend-btn {
+  background-color: #ffca28;
+  color: black;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.recommend-btn:hover {
+  transform: scale(1.05);
+}
