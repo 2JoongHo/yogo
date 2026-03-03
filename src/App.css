@@ -59,6 +59,17 @@
   cursor: not-allowed;
 }
 
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .result-card {
   margin-top: 3rem;
   text-align: center;
@@ -67,6 +78,7 @@
   border-radius: 20px;
   max-width: 400px;
   width: 100%;
+  animation: slideUp 0.3s ease-out;
 }
 
 .result-title {

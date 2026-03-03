@@ -27,7 +27,7 @@ export function InputStep({
         <span className="unit">명</span>
       </div>
       <button className="recommend-btn" onClick={onFetch} disabled={loading}>
-        {loading ? "찾고있어요!" : "추천 받기"}
+        {loading ? "뭐가 좋을까~" : "추천 받기"}
       </button>
     </div>
   );
